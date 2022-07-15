@@ -41,18 +41,6 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 //        return authenticationConverter;
 //    }
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        UserDetails user = User
-//                .withDefaultPasswordEncoder()
-//                .username("w77")
-//                .password("11")
-//                .roles("ADM")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(user);
-//    }
-
 
 
 
