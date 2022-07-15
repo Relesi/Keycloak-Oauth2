@@ -1,3 +1,5 @@
+package com.relesi.auth;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -8,7 +10,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
