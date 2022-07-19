@@ -2,7 +2,6 @@ package com.relesi.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -18,12 +17,11 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
         http.cors()
                 .and()
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.GET, "/").permitAll()
-                    //.hasAuthority("ROLE_USER")
+                    .antMatchers(HttpMethod.GET, "/auth")
+                    .hasAuthority("ROLE_USER")
                     .anyRequest()
                     .authenticated()
                 .and()
-                    .anonymous().disable()
                     .oauth2ResourceServer()
                     .jwt()
                     .jwtAuthenticationConverter(getJwtAuthenticationConverter());
